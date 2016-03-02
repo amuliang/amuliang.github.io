@@ -1,0 +1,69 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<script language="javascript" src="snakergame/SnakerGame.js"></script>
+</head>
+<body>
+	<div>
+		<div id='canvas' style="float:left"></div>
+		<div style='float:left; height:200px;'>
+			<button id='play'>play</button>
+			<button id='stop'>stop</button>
+			<p class='text'>score:</p>
+			<p class='value' id='score'>0</p>
+			<p class='text'>high score:</p>
+			<p class='value' id='hscore'>0</p>
+		</div>
+	</div>
+
+</body>
+<style type="text/css">
+	button {
+		width: 100px;
+		height: 25px;
+		display: block;
+	}
+	p {
+		margin: 0;
+		padding-left: 4px;
+	}
+	.text {
+		background-color: #fa0;
+	}
+	.value {
+		color: #fff;
+		background-color: #333;
+	}
+</style>
+<script>
+	var $ = function(id) {
+		return document.getElementById(id);
+	}
+
+	var content = $('canvas');
+	var play = $('play');
+	var stop = $('stop');
+	var score = $('score');
+	var hscore = $('hscore');
+
+	var sg = new SnakerGame(content);
+	sg.resize(25, 25, 15);
+	play.onclick = function() {
+		var btnName = play.innerText;
+		eval('sg.' + btnName + '()');
+		if(btnName == 'play') play.innerText = 'pause';
+		else if(btnName == 'pause') play.innerText = 'continue';
+		else if(btnName == 'continue') play.innerText = 'pause';
+	}
+	stop.onclick = function() {
+		var btnName = stop.innerText;
+		eval('sg.' + btnName + '()');
+		play.innerText = 'play';
+	}
+	setInterval(function() {
+		score.innerText = sg.currentScore;
+		hscore.innerText = sg.maxScore;
+		if(sg.state == 'finish') play.innerText = 'play';
+	}, 20);
+</script>
+</html>

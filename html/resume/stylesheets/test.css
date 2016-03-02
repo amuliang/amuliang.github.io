@@ -1,0 +1,109 @@
+
+.heroselect {
+	background-color: #411;
+	width: 900px;
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	margin-left: -450px;
+	box-shadow: inset 0 0 200px rgba(0,0,0,0.8);
+}
+
+.box, .box2{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 900px;
+	height: 500px;
+	user-select: none;
+	transform-style: preserve-3d;
+	perspective: 800px;
+}
+
+.box div, .box2 div{
+	position: absolute;
+	top: 50%;
+	margin-top: -227px;
+	left: 50%;
+	margin-left: -125px;
+	width: 250px;
+	height: 455px;
+}
+.box div {
+	background-color: #000;
+	overflow: hidden;
+	box-shadow: inset 0 0 30px rgba(125,125,125,0.8);
+	transition: all 0.5s;
+}
+.box img {
+	width: 250px;
+	opacity: 0.6;
+	transition: all 0.5s;
+}
+
+.trans0 {
+	transform: scale3d( 0.5, 0.5, 1) translateX(-300px) translateZ(50px) rotateY(30deg);
+	opacity: 0;
+}
+.trans1 {
+	transform: scale3d( 0.5, 0.5, 1) translateX(-250px) translateZ(100px) rotateY(30deg);
+	opacity: 100;
+}
+.trans2 {
+	transform: scale3d( 0.5, 0.5, 1) translateX(-150px) translateZ(200px) rotateY(30deg);
+	opacity: 100;
+}
+.trans3 {
+	transform: scale3d( 0.5, 0.5, 1) translateX(0px) translateZ(400px) rotateY(0deg);
+	opacity: 100;
+}
+.trans3 img {
+	opacity: 1;
+}
+.trans4 {
+	transform: scale3d( 0.5, 0.5, 1) translateX(150px) translateZ(200px) rotateY(-30deg);
+	opacity: 100;
+}
+.trans5 {
+	transform: scale3d( 0.5, 0.5, 1) translateX(250px) translateZ(100px) rotateY(-30deg);
+	opacity: 100;
+}
+.trans6 {
+	transform: scale3d( 0.5, 0.5, 1) translateX(300px) translateZ(50px) rotateY(-30deg);
+	opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+	@keyframes animte {
+		from css1
+		to css2
+	}
+	.test1 {
+		width: 200px;
+		height: 200px;
+		animation: animte 5s infinite linear;
+	}
+	.test {
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		background: rgba(255,255,255,0.1);
+		box-shadow: inset 0 0 30px rgba(125,125,125,0.8);
+		font-size: 20px;
+		text-align: center;
+		line-height: 200px;
+		color: rgba(0,0,0,0.5);
+		text-transform: uppercase;
+
+		perspective: 800px;
+		perspective-origin: 50% 100px;
+		transform-style: preserve-3d;
+		transform: translateZ(-100px) rotateY(45deg);
+	}
